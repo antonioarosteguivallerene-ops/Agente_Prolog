@@ -237,6 +237,13 @@ async function enviar() {
 }
 
 $("btnEnviar").addEventListener("click", enviar);
+$("btnLimpiar").addEventListener("click", () => {
+  $("codigo").value = "";
+  $("respuesta").className = "respuesta";
+  $("respuesta").textContent = "Aquí aparecerá el resultado.";
+  $("explicacion").textContent = "—";
+  $("codigo").focus();
+});
 $("btnEjemplo").addEventListener("click", () => { $("codigo").value = EJEMPLOS.principal; });
 $("selEjemplos").addEventListener("change", (e) => {
   if (e.target.value) $("codigo").value = EJEMPLOS[e.target.value];
